@@ -1,3 +1,4 @@
+int score;
 void setup()
 {
   size(500, 500);
@@ -9,11 +10,22 @@ void draw()
   
   fill(#62A5AA);
   stroke(#62A5AA);
-  ellipse(250, 250, width, height);
+  ellipse(250, 250, 10, 10);
 
-//int randomNumber = (int) random(width);
+  int randomNumber = (int) random(width);
 
-//rect(int x, int y, int width, int height);
-
-
+  rect(mouseX, mouseY, height, width);
 }
+
+void checkCatch(int x)
+{
+     if (x > mouseX && x < mouseX+100)
+          score++;
+     else if (score > 0) 
+          score--;
+     println("Your score is now: " + score); 
+     
+     fill(0, 0, 0);
+     textSize(16);
+     text("Score: " + score, 20, 20);
+  }
