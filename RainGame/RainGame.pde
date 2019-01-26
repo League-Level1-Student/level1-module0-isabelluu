@@ -1,4 +1,7 @@
-int score;
+int score = 0;
+int randomNumber = (int) random(width);
+int x;
+int dropY = 100;
 void setup()
 {
   size(500, 500);
@@ -6,21 +9,25 @@ void setup()
 
 void draw()
 {
-  background(#407C69);
+  dropY++;
+  background(#76AA9F);
   
-  fill(#62A5AA);
-  stroke(#62A5AA);
-  ellipse(250, 250, 10, 10);
+  fill(#146CC1);
+  stroke(#146CC1);
+  for(int i = 0; i<100; i++)
+  {
+  ellipse(randomNumber, dropY, 10, 10);
+  }
 
-  int randomNumber = (int) random(width);
-
-  rect(mouseX, mouseY, height, width);
+  rect(mouseX, mouseY, 50, 50);
+  checkCatch(randomNumber, dropY);
 }
 
-void checkCatch(int x)
+void checkCatch(int randomNumber, int dropY)
 {
-     if (x > mouseX && x < mouseX+100)
-          score++;
+     if (randomNumber > mouseX && randomNumber < mouseX+100 && dropY > mouseY && dropY < mouseY+100)
+          {score++;
+          draw();}
      else if (score > 0) 
           score--;
      println("Your score is now: " + score); 
