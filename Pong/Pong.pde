@@ -20,11 +20,22 @@ image(backgroundImage, 0, 0, width, height);
   int randomNumber = (int) random(width);
   fill(#66A58D);
   stroke(#66A58D);
-  for(int i = 0; i <100; i++)
+  for(int i = 0; i <1000; i++)
   {
+    //image(backgroundImage, 0, 0, width, height);
     ellipse(randomNumber, 220, 10, 10);
   }
-  rect(mouseX, mouseY, 10, 10);
+  rect(mouseX, mouseY, 50, 50);
   sound.trigger();
   
+  //intersects(ballX, ballY, mouseX, mouseY, paddleLength);
+  
+}
+
+boolean intersects(int ballX, int ballY, int paddleX, int paddleY, int paddleLength)
+{
+     if (ballY > paddleY && ballX > paddleX && ballX < paddleX + paddleLength)
+          return true;
+     else 
+          return false;
 }
