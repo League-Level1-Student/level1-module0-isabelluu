@@ -58,7 +58,7 @@ public class BodyPartQuiz {
 		
 		String guess1= JOptionPane.showInputDialog("Who is this?");
 		
-		if(guess1 == "Leonardo" || guess1 == "Leonardo Decaprio")
+		if(guess1 == "Leonardo" || guess1 == "Leonardo Dicaprio")
 		{
 			JOptionPane.showMessageDialog(null, "Correct!");
 			score++;
